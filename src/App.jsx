@@ -22,7 +22,7 @@ function App() {
 
     setFileLoading(true);
     setFiles((prev) => [...prev, ...selectedFiles]);
-    e.target.value = ""; // reset input
+    e.target.value = "";
 
 
     for (const file of selectedFiles) {
@@ -39,15 +39,11 @@ function App() {
             try {
               const formData = new FormData();
               formData.append("url", url);
-              const res = await fetch("http://localhost:8000/api/text/", {
+              const res = await fetch("https://backend-data-analyst-agent-1.onrender.com/api/text/", {
                 method: "POST",
-                body: formData, // multipart/form-data automatically
+                body: formData,
               });
-              // const res = await fetch("http://localhost:8000/api/text/", {
-              //   method: "POST",
-              //   headers: { "Content-Type": "application/json" },
-              //   body: JSON.stringify({ url }),
-              // });
+
               const data = await res.json();
               text = text.replace(url, data.content);
             } catch (err) {
@@ -82,7 +78,7 @@ function App() {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/api/text/", {
+      const res = await fetch("https://backend-data-analyst-agent-1.onrender.com/api/text/", {
         method: "POST",
         body: formData,
       });
