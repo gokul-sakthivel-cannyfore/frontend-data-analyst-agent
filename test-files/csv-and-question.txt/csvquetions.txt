@@ -1,0 +1,8 @@
+Questions:
+1)How many rows (records) and columns does the dataset contain?
+
+2)What kind of customer information is stored in each column?
+
+3)Which columns could serve as unique identifiers for each customer?
+
+4)How can this dataset be useful for customer segmentation or marketing analysis?
